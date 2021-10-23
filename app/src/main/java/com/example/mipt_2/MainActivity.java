@@ -3,13 +3,14 @@ package com.example.mipt_2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mipt_2.utils.TextCounter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,4 +32,22 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.spOption.setAdapter(adapter);
     }
+
+    public void onBtnClick(View view) {
+        String enteredText = this.etSentenceInput.getText().toString();
+        String selectedOption = this.spOption.getSelectedItem().toString();
+        if (enteredText.matches("")) {
+            Toast.makeText(this, "Please enter any text", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else {
+            if (selectedOption.equals("Words")) {
+                this.tvAnswer.setText(String.valueOf(TextCounter.getWordsCount(enteredText)));
+            }
+            else if (selectedOption.equals("Punctuation")) {
+                this.tvAnswer.setText(String.valueOf(TextCounter.getPuncCount(enteredText)));
+            }
+        }
+    }
+
 }
