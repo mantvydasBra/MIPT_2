@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MIPT_2</string>
+    <string-array name="counter_options">
+        <item>Words</item>
+        <item>Punctuation</item>
+    </string-array>
 </resources>

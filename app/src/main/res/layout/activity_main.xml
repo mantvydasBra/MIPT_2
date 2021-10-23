@@ -7,12 +7,57 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
+    <EditText
+        android:id="@+id/etSentenceInput"
+        android:layout_width="367dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="229dp"
+        android:layout_marginEnd="21dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Enter your sentence"
+        android:autofillHints="text"
+        app:layout_constraintBottom_toTopOf="@+id/spOptions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spOptions"
+        android:layout_width="407dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSentenceInput" />
+
+    <Button
+        android:id="@+id/btnCount"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="58dp"
+        android:text="Count it!"
+        app:layout_constraintBottom_toTopOf="@+id/tvAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spOptions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
