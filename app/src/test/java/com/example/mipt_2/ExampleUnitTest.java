@@ -66,8 +66,6 @@ public class ExampleUnitTest {
 
     @Test
     public void Test06GetPuncCount() {
-        // Null pointer exception
-        // Reiktu pataisyti koda, kad tikrintu ar perduodamas tesktas nera null
         String inputString = "012123!!#@#ASDZC.,l';./.;123////a;.dasd'23123";
         int expectedValue = 20;
         int actualValue = TextCounter.getPuncCount(inputString);
